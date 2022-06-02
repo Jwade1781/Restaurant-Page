@@ -1,0 +1,78 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    --bgColorOne: rgba(0,0,0,0.9);
+    --bgColorTwo: #bffff3;
+    --bgColorThree: #b39d59;
+
+    --bgColorAccent: #597ab3;
+
+    --fontColorLight: #DFFFF9;
+    --fontColorDark: #202020;
+
+    --fontSm: 16px;
+    --fontMed: 24px;
+    --fontLg: 42px;
+
+    --paddingSm: 5px;
+    --paddingMed: 10px;
+    --paddingLg: 30px;
+    --paddingEx: 75px;
+
+    --curveSm: 10px;
+    --curveMed: 20px;
+    --curveCircle: 50%;
+}
+
+html, body, div#content {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--bgColorThree);
+}
+
+nav {
+    padding-top: var(--paddingEx);
+    background-color: var(--bgColorOne);
+    text-align: center;
+    color: var(--fontColorLight);
+}
+
+nav h1 {
+    font-size: var(--fontLg);
+}
+nav ul {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: var(--paddingLg);
+    list-style: none;
+}
+
+nav ul li {
+    margin-top: var(--paddingMed);
+    margin-bottom: var(--paddingMed);
+    font-size: var(--fontMed);
+    cursor:pointer;
+}
+
+.hoverBounce:hover{
+    animation: bounceAnimation 0.05s linear forwards;
+}
+
+
+.navSelected {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+@keyframes bounceAnimation {
+    100% {margin-top: var(--paddingSm);}
+}
