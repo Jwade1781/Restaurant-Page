@@ -1,6 +1,6 @@
 const renderHeader = (() => {
     const nav = document.createElement("nav");
-    const siteName = "Mozzafiato";
+    const siteName = "Bamboo Garden";
     const siteHeader = document.createElement("h1");
     siteHeader.textContent = siteName;
 

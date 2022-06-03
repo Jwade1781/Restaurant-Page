@@ -1,16 +1,17 @@
 * {
     margin: 0px;
     padding: 0px;
+    font-family: 'Lato', sans-serif;
 }
 
 :root {
     --bgColorOne: rgba(0,0,0,0.9);
-    --bgColorTwo: #bffff3;
+    --bgColorTwo: rgba(0,0,0,0.7);
     --bgColorThree: #b39d59;
 
     --bgColorAccent: #597ab3;
 
-    --fontColorLight: #DFFFF9;
+    --fontColorLight: #FEFEFE;
     --fontColorDark: #202020;
 
     --fontSm: 16px;
@@ -27,10 +28,14 @@
     --curveCircle: 50%;
 }
 
-html, body, div#content {
+html, body {
     height: 100vh;
     width: 100vw;
-    background-color: var(--bgColorThree);
+    background-color: var(--bgColorAccent);
+}
+
+h1, h2{
+    font-family: 'Joan', serif;
 }
 
 nav {
@@ -40,10 +45,11 @@ nav {
     color: var(--fontColorLight);
 }
 
-nav h1 {
+nav > h1 {
     font-size: var(--fontLg);
 }
-nav ul {
+
+nav > ul {
     justify-content: center;
     display: flex;
     flex-direction: row;
@@ -51,11 +57,67 @@ nav ul {
     list-style: none;
 }
 
-nav ul li {
+nav > ul > li {
     margin-top: var(--paddingMed);
     margin-bottom: var(--paddingMed);
     font-size: var(--fontMed);
     cursor:pointer;
+}
+
+#contentContainer {
+    margin-top: var(--paddingEx);
+    color: var(--fontColorLight);
+    display: flex;
+    justify-content: center;
+}
+
+#contentContainer > #homeContent {
+    background-color: var(--bgColorTwo);
+    border-radius: var(--curveSm);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 50vw;
+}
+
+#contentContainer > #homeContent > div:first-child{
+    margin: var(--paddingLg) 0;
+    padding: var(--paddingLg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--paddingSm);
+}
+
+#contentContainer > #homeContent > div:nth-child(2){
+    padding: var(--paddingMed);
+    display: flex;
+    flex-direction: row;
+    gap: var(--paddingLg);
+}
+
+#contentContainer > #homeContent > div:nth-child(2) > * {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+#contentContainer > #homeContent > div:nth-child(2) > * > h2 {
+    text-align: center;
+}
+
+#contentContainer > #homeContent > div:nth-child(2) > * > #gmap {
+    align-self: center;
+}
+
+#contentContainer > #homeContent  > button {
+    border-radius:var(--curveSm);
+    padding: var(--paddingMed);
+    max-width: fit-content;
+    cursor: pointer;
+    align-self: center;
+    margin: var(--paddingLg) 0 var(--paddingMed) 0;
 }
 
 .hoverBounce:hover{
@@ -71,8 +133,18 @@ nav ul li {
 
 
 
+.hoverDarkBg:hover{
+    color: var(--fontColorLight);
+    background-color:var(--fontColorDark);
+    /*animation: fadeBlackAnimation 0.2s linear forwards;*/
+}
 
-
+@keyframes fadeBlackAnimation{
+    100%{
+        color: var(--fontColorLight);
+        background-color:var(--fontColorDark);
+    }
+}
 @keyframes bounceAnimation {
     100% {margin-top: var(--paddingSm);}
 }
