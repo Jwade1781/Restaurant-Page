@@ -6,5 +6,15 @@ module.exports = {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  devtool: 'inline-source-map'
+  devtool: 'inline-source-map',
+  module: {
+    rules: [
+      {
+        test: /\.(jpg|png)$/,
+        use: {
+          loader: 'url-loader',
+        }
+      }
+    ]
+  }
 };

@@ -6,7 +6,7 @@
 
 :root {
     --bgColorOne: rgba(0,0,0,0.9);
-    --bgColorTwo: rgba(0,0,0,0.7);
+    --bgColorTwo: rgba(0,0,0,0.8);
     --bgColorThree: #b39d59;
 
     --bgColorAccent: #597ab3;
@@ -38,11 +38,16 @@ h1, h2{
     font-family: 'Joan', serif;
 }
 
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 nav {
     padding-top: var(--paddingEx);
     background-color: var(--bgColorOne);
     text-align: center;
     color: var(--fontColorLight);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 nav > h1 {
@@ -103,12 +108,20 @@ nav > ul > li {
     text-align: left;
 }
 
-#contentContainer > #homeContent > div:nth-child(2) > * > h2 {
+.hours {
+    display: flex;
+    flex-direction: column;
+    margin: var(--paddingMed);
+}
+
+#contentContainer > #homeContent > div:nth-child(2) h2 {
     text-align: center;
 }
 
-#contentContainer > #homeContent > div:nth-child(2) > * > #gmap {
-    align-self: center;
+#contentContainer > #homeContent > div:nth-child(2) > * > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #contentContainer > #homeContent  > button {
@@ -148,3 +161,13 @@ nav > ul > li {
 @keyframes bounceAnimation {
     100% {margin-top: var(--paddingSm);}
 }
+
+.fadeIn {
+    animation: fadeInAnimation 1s linear forwards;
+}
+
+.fadeOut {
+    animation: fadeOutAnimation 1s linear forwards;
+}
+@keyframes fadeInAnimation {100% {opacity: 1.0;}}
+@keyframes fadeOutAnimation {100%{opacity: 0.0;}}
