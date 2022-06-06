@@ -1,3 +1,9 @@
+import { backgroundShifter } from "./background.js"
+import { renderHome } from "./home.js"
+import { renderMenu } from "./menu.js"
+import { renderAbout } from "./about.js"
+import { renderContact } from "./contact.js"
+
 const renderHeader = (() => {
     const nav = document.createElement("nav");
     const siteName = "Bamboo Garden";
@@ -6,28 +12,46 @@ const renderHeader = (() => {
 
     const ul = document.createElement("ul");
     const redirects = {
-        "Home" : [
-            "navSelected",
-            "hoverBounce"
-        ],
+        "Home": {
+            "classes": ["navSelected", "hoverBounce"],
+            "onclick": renderHome
+        },
 
-        "Menu" : ["hoverBounce"],
-        "About" : ["hoverBounce"],
-        "Contact" : ["hoverBounce"]
+        "Menu": {
+            "classes": ["hoverBounce"],
+            "onclick": renderMenu
+        },
+
+        "About": {
+            "classes": ["hoverBounce"],
+            "onclick": renderAbout
+        },
+
+        "Contact": {
+            "classes": ["hoverBounce"],
+            "onclick": renderContact
+        },
     }
 
-    const constructRedirects = (redirectName, classArray) => {
+    const constructRedirects = (redirectName, dictionary) => {
         let listEntry = document.createElement("li");
+        
+
         listEntry.textContent = redirectName;
-        for (const className of classArray)
+        for (const className of dictionary["classes"])
             listEntry.classList.add(className);
+
+        listEntry.addEventListener("click", () => {
+            const contentContainer = document.querySelector("#contentContainer");
+            while(contentContainer.hasChildNodes())
+                contentContainer.removeChild(contentContainer.lastChild);
+            contentContainer.append(dictionary["onclick"]);
+        })
         return listEntry;
     }
 
-    for (const [key, classArray] of Object.entries(redirects)) {
-        ul.append(constructRedirects(key, classArray));
-    }
-
+    for (const [key, dictionary] of Object.entries(redirects))
+        ul.append(constructRedirects(key, dictionary));
     nav.append(siteHeader);
     nav.append(ul);
     return nav;

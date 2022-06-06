@@ -1,0 +1,3 @@
+const renderAbout = (() => {
+})();
+export { renderAbout };

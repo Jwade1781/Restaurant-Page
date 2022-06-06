@@ -1,0 +1,4 @@
+const renderContact = (() => {
+})();
+
+export { renderContact };

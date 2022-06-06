@@ -1,0 +1,4 @@
+const renderMenu = (() => {
+})();
+
+export { renderMenu };
