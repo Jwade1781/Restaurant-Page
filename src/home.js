@@ -1,3 +1,5 @@
+import './home.css';
+
 const renderHome = (() => {
     const home = document.createElement("div");
     home.id = "homeContent";

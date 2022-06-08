@@ -1,0 +1,59 @@
+
+#contentContainer > #homeContent {
+    background-color: var(--bgColorTwo);
+    border-radius: var(--curveSm);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 50vw;
+}
+
+#contentContainer > #homeContent > div:first-child{
+    margin: var(--paddingLg) 0;
+    padding: var(--paddingLg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--paddingSm);
+}
+
+#contentContainer > #homeContent > div:nth-child(2){
+    padding: var(--paddingMed);
+    display: flex;
+    flex-direction: row;
+    gap: var(--paddingLg);
+}
+
+#contentContainer > #homeContent > div:nth-child(2) > * {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+}
+
+.hours {
+    display: flex;
+    flex-direction: column;
+    margin: var(--paddingMed);
+}
+
+#contentContainer > #homeContent > div:nth-child(2) h2 {
+    text-align: center;
+}
+
+#contentContainer > #homeContent > div:nth-child(2) > * > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contentContainer > #homeContent  > button {
+    border-radius:var(--curveSm);
+    padding: var(--paddingMed);
+    max-width: fit-content;
+    cursor: pointer;
+    align-self: center;
+    margin: var(--paddingLg) 0 var(--paddingMed) 0;
+}

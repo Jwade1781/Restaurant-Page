@@ -1,3 +1,5 @@
+import './header.css'
+
 import { backgroundShifter } from "./background.js"
 import { renderHome } from "./home.js"
 import { renderMenu } from "./menu.js"
@@ -35,15 +37,16 @@ const renderHeader = (() => {
 
     const constructRedirects = (redirectName, dictionary) => {
         let listEntry = document.createElement("li");
-        
-
         listEntry.textContent = redirectName;
+
         for (const className of dictionary["classes"])
             listEntry.classList.add(className);
 
         listEntry.addEventListener("click", () => {
             const contentContainer = document.querySelector("#contentContainer");
-            while(contentContainer.hasChildNodes())
+            document.querySelector(".navSelected").classList.remove("navSelected");
+            listEntry.classList.add("navSelected");
+            while(contentContainer.hasChildNodes()) //deletes all previously created doms within the content container
                 contentContainer.removeChild(contentContainer.lastChild);
             contentContainer.append(dictionary["onclick"]);
         })

@@ -1,3 +1,5 @@
+import './contact.css'
+
 const renderContact = (() => {
 })();
 

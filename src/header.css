@@ -1,0 +1,36 @@
+#headerContainer {
+    position: sticky;
+    top: 0%;
+    width: 100%;
+}
+
+nav {
+    padding-top: var(--paddingEx);
+    background-color: var(--bgColorOne);
+    text-align: center;
+    color: var(--fontColorLight);
+    box-shadow: var(--shadowCurveSm);
+}
+
+nav > h1 {
+    font-size: var(--fontLg);
+}
+
+nav > ul {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: var(--paddingLg);
+    list-style: none;
+}
+
+nav > ul > li {
+    margin-top: var(--paddingMed);
+    margin-bottom: var(--paddingMed);
+    font-size: var(--fontMed);
+    cursor:pointer;
+}
+
+.navSelected {
+    text-decoration: underline;
+}

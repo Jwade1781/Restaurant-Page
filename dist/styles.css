@@ -45,9 +45,8 @@ body {
     background-attachment: fixed;
 }
 
-h1, h2{
-    font-family: 'Joan', serif;
-}
+h1, h2{font-family: 'Joan', serif;}
+
 h1 {font-size: clamp(1.8rem, 3.5vw, 3rem)}
 h2 {font-size: clamp(1.5rem, 2.75vw, 2rem)}
 h3 {font-size: clamp(1.0rem, 2vw, 1.5rem)}
@@ -62,37 +61,6 @@ body {
     overflow: visible;
 }
 
-#headerContainer {
-    position: sticky;
-    top: 0%;
-    width: 100%;
-}
-nav {
-    padding-top: var(--paddingEx);
-    background-color: var(--bgColorOne);
-    text-align: center;
-    color: var(--fontColorLight);
-    box-shadow: var(--shadowCurveSm);
-}
-
-nav > h1 {
-    font-size: var(--fontLg);
-}
-
-nav > ul {
-    justify-content: center;
-    display: flex;
-    flex-direction: row;
-    gap: var(--paddingLg);
-    list-style: none;
-}
-
-nav > ul > li {
-    margin-top: var(--paddingMed);
-    margin-bottom: var(--paddingMed);
-    font-size: var(--fontMed);
-    cursor:pointer;
-}
 
 #contentContainer {
     margin-top: var(--paddingEx);
@@ -101,79 +69,9 @@ nav > ul > li {
     justify-content: center;
 }
 
-#contentContainer > #homeContent {
-    background-color: var(--bgColorTwo);
-    border-radius: var(--curveSm);
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    min-width: 50vw;
-}
-
-#contentContainer > #homeContent > div:first-child{
-    margin: var(--paddingLg) 0;
-    padding: var(--paddingLg);
-    display: flex;
-    flex-direction: column;
-    gap: var(--paddingSm);
-}
-
-#contentContainer > #homeContent > div:nth-child(2){
-    padding: var(--paddingMed);
-    display: flex;
-    flex-direction: row;
-    gap: var(--paddingLg);
-}
-
-#contentContainer > #homeContent > div:nth-child(2) > * {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    width: 100%;
-    height: 100%;
-}
-
-
-
-.hours {
-    display: flex;
-    flex-direction: column;
-    margin: var(--paddingMed);
-}
-
-#contentContainer > #homeContent > div:nth-child(2) h2 {
-    text-align: center;
-}
-
-#contentContainer > #homeContent > div:nth-child(2) > * > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#contentContainer > #homeContent  > button {
-    border-radius:var(--curveSm);
-    padding: var(--paddingMed);
-    max-width: fit-content;
-    cursor: pointer;
-    align-self: center;
-    margin: var(--paddingLg) 0 var(--paddingMed) 0;
-}
-
 .hoverBounce:hover{
     animation: bounceAnimation 0.05s linear forwards;
 }
-
-
-.navSelected {
-    text-decoration: underline;
-}
-
-
-
-
 
 .hoverDarkBg:hover{
     color: var(--fontColorLight);
@@ -181,65 +79,6 @@ nav > ul > li {
     /*animation: fadeBlackAnimation 0.2s linear forwards;*/
 }
 
-
-
-
-#menu {
-    background-color: #202020;
-    color: var(--fontColorLight);
-    display: grid;
-    grid-template-rows: repeat(auto-fill, minmax(400px, 1fr));
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: var(--paddingEx);
-    width: 100%;
-    height: 100%;
-    margin: 0 var(--paddingEx);
-    padding: var(--paddingLg);
-    box-shadow: var(--shadowCurveEx);
-    border: var(--borderSm) solid var(--bgColorAccent);
-}
-
-.foodCategory {
-    padding: var(--paddingLg);
-    border: var(--borderMed) solid var(--bgColorAccent);
-    border-radius: var(--curveSm);
-    max-height: min-content;
-
-}
-
-.foodCategory > h1 {
-    text-align: center;
-    border-bottom: var(--borderSm) solid var(--bgColorAccent);
-    margin-bottom: var(--paddingLg);
-}
-
-.foodCategory > div {
-    margin-bottom: var(--paddingLg);
-    width: 100%;
-}
-
-.foodNamePrice > .foodName, .foodNamePrice > .foodPrice {
-    margin-right: var(--paddingMed);
-    display: inline-flex;
-}
-
-.foodImage {
-    width: 100%;
-    height: auto;
-}
-
-.foodPrice {
-    font-style: italic;
-    text-align: center;
-}
-
-details {
-    cursor: pointer;
-}
-
-details > img {
-    margin: var(--paddingMed) 0px;
-}
 @keyframes fadeBlackAnimation{
     100%{
         color: var(--fontColorLight);
