@@ -14,6 +14,14 @@ module.exports = {
         use: {
           loader: 'url-loader',
         }
+      },
+      
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
       }
     ]
   }
