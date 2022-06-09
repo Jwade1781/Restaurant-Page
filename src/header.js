@@ -1,6 +1,5 @@
 import './css/header.css'
 
-import { backgroundShifter } from "./background.js"
 import { renderHome } from "./home.js"
 import { renderMenu } from "./menu.js"
 import { renderAbout } from "./about.js"
@@ -9,8 +8,8 @@ import { renderContact } from "./contact.js"
 const renderHeader = (() => {
     const nav = document.createElement("nav");
     const siteName = "Bamboo Garden";
-    const siteHeader = document.createElement("h1");
-    siteHeader.textContent = siteName;
+    const siteNameHeader = document.createElement("h1");
+    siteNameHeader.textContent = siteName;
 
     const ul = document.createElement("ul");
     const redirects = {
@@ -38,7 +37,7 @@ const renderHeader = (() => {
     const constructRedirects = (redirectName, dictionary) => {
         let listEntry = document.createElement("li");
         listEntry.textContent = redirectName;
-
+        listEntry.id = `${redirectName.toLowerCase()}Button`
         for (const className of dictionary["classes"])
             listEntry.classList.add(className);
 
@@ -46,7 +45,7 @@ const renderHeader = (() => {
             const contentContainer = document.querySelector("#contentContainer");
             document.querySelector(".navSelected").classList.remove("navSelected");
             listEntry.classList.add("navSelected");
-            while(contentContainer.hasChildNodes()) //deletes all previously created doms within the content container
+            while (contentContainer.hasChildNodes()) //deletes all previously created doms within the content container
                 contentContainer.removeChild(contentContainer.lastChild);
             contentContainer.append(dictionary["onclick"]);
         })
@@ -55,9 +54,9 @@ const renderHeader = (() => {
 
     for (const [key, dictionary] of Object.entries(redirects))
         ul.append(constructRedirects(key, dictionary));
-    nav.append(siteHeader);
+    nav.append(siteNameHeader);
     nav.append(ul);
     return nav;
 })();
 
-export { renderHeader };
+export { renderHeader};

@@ -13,11 +13,8 @@ export class Food {
         let parentDiv = document.createElement("div");
         parentDiv.classList.add(this.type);
 
-        let foodNamePriceDiv = this.createFoodName();
-        let details = this.createDetail();
-
-        parentDiv.append(foodNamePriceDiv);
-        parentDiv.append(details);
+        parentDiv.append(this.createFoodName());
+        parentDiv.append(this.createDetail());
         return parentDiv;
     }
 

@@ -1,16 +1,21 @@
-import {renderHeader} from "./header.js"
-import {backgroundShifter} from "./background.js"
-import {renderHome} from "./home.js"
-import { renderMenu } from "./menu.js";
+import { renderHeader } from "./header.js"
+import {setupDebug} from "./debug.js";
+import { renderHome } from "./home.js"
 
-const DEBUG = false;
+
+
+const main = () => {
+    const debug = false;
+    let startingPage;
+    
+    (debug) ? startingPage = setupDebug : startingPage = renderHome;
+
+    document.querySelector("#headerContainer").append(renderHeader);
+    document.querySelector("#contentContainer").append(startingPage);
+}
 
 document.addEventListener('readystatechange', event => {
     if (event.target.readyState === "complete") {
-        document.querySelector("#headerContainer").append(renderHeader);
-
-        if (!DEBUG) setInterval(function(){backgroundShifter();}, 2000)
-        //document.querySelector("#contentContainer").append(renderMenu);
-        //document.querySelector("#contentContainer").append(renderHome);
+        main();
     }
 })

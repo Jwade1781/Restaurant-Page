@@ -2,22 +2,15 @@ import './css/menu.css'
 import { Food } from './food';
 
 const renderMenu = (() => {
+    console.log("Rendering Menu");
     let menuDiv = document.createElement("div");
     menuDiv.id = "menu";
-
-    //createAppetizers();
-    //console.log(createAppetizers());
     menuDiv.append(createAppetizers());
     menuDiv.append(createEntrees());
-
-    if (document.querySelector("#contentContainer")){
-        document.getElementById("contentContainer").append(menuDiv);
-    }
-    //document.querySelector("#contentContainer").append(menuDiv);
+    return menuDiv;
 })();
 
 function createAppetizers() {
-
     const Appetizers = {
         "type": "Appetizer",
         "foods": [
@@ -55,6 +48,20 @@ function createAppetizers() {
                 "imgSrc": "../dist/assets/images/bg1.jpg",
                 "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus beatae voluptas unde doloribus inventore. Nulla minus dolorem necessitatibus fuga blanditiis accusantium aut nesciunt ratione tempore, unde adipisci repudiandae corrupti aspernatur?"
             },
+
+            {
+                "Name": "Steamed Dumplings",
+                "Price": "$7.45",
+                "imgSrc": "../dist/assets/images/bg1.jpg",
+                "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus beatae voluptas unde doloribus inventore. Nulla minus dolorem necessitatibus fuga blanditiis accusantium aut nesciunt ratione tempore, unde adipisci repudiandae corrupti aspernatur?"
+            },
+
+            {
+                "Name": "Fried Dumplings",
+                "Price": "$7.45",
+                "imgSrc": "../dist/assets/images/bg1.jpg",
+                "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus beatae voluptas unde doloribus inventore. Nulla minus dolorem necessitatibus fuga blanditiis accusantium aut nesciunt ratione tempore, unde adipisci repudiandae corrupti aspernatur?"
+            },
         ]
     }
     return createDom(Appetizers);
@@ -66,36 +73,50 @@ function createEntrees() {
         "type": "Entree",
         "foods": [
             {
-                "Name": "Pork Egg Roll",
-                "Price": "$1.75",
+                "Name": "Chicken Lo Mein",
+                "Price": "$7.75",
                 "imgSrc": "../dist/assets/images/bg1.jpg",
                 "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus beatae voluptas unde doloribus inventore. Nulla minus dolorem necessitatibus fuga blanditiis accusantium aut nesciunt ratione tempore, unde adipisci repudiandae corrupti aspernatur?"
             },
 
             {
-                "Name": "Veg Egg Roll",
-                "Price": "$1.75",
+                "Name": "Beef Lo Mein",
+                "Price": "$7.75",
                 "imgSrc": "../dist/assets/images/bg1.jpg",
                 "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus beatae voluptas unde doloribus inventore. Nulla minus dolorem necessitatibus fuga blanditiis accusantium aut nesciunt ratione tempore, unde adipisci repudiandae corrupti aspernatur?"
             },
 
             {
-                "Name": "Spring Roll",
-                "Price": "$1.35",
+                "Name": "Shrimp Lo Mein",
+                "Price": "$8.35",
                 "imgSrc": "../dist/assets/images/bg1.jpg",
                 "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus beatae voluptas unde doloribus inventore. Nulla minus dolorem necessitatibus fuga blanditiis accusantium aut nesciunt ratione tempore, unde adipisci repudiandae corrupti aspernatur?"
             },
 
             {
-                "Name": "Fried Wonton",
-                "Price": "$5.25",
+                "Name": "Honey Chicken",
+                "Price": "$7.75",
                 "imgSrc": "../dist/assets/images/bg1.jpg",
                 "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus beatae voluptas unde doloribus inventore. Nulla minus dolorem necessitatibus fuga blanditiis accusantium aut nesciunt ratione tempore, unde adipisci repudiandae corrupti aspernatur?"
             },
 
             {
-                "Name": "Krab Rangoon",
-                "Price": "$5.25",
+                "Name": "Curry Chicken",
+                "Price": "$7.75",
+                "imgSrc": "../dist/assets/images/bg1.jpg",
+                "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus beatae voluptas unde doloribus inventore. Nulla minus dolorem necessitatibus fuga blanditiis accusantium aut nesciunt ratione tempore, unde adipisci repudiandae corrupti aspernatur?"
+            },
+
+            {
+                "Name": "Sweet & Sour Chicken",
+                "Price": "$7.75",
+                "imgSrc": "../dist/assets/images/bg1.jpg",
+                "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus beatae voluptas unde doloribus inventore. Nulla minus dolorem necessitatibus fuga blanditiis accusantium aut nesciunt ratione tempore, unde adipisci repudiandae corrupti aspernatur?"
+            },
+
+            {
+                "Name": "Beef with Garlic Sauce",
+                "Price": "$7.75",
                 "imgSrc": "../dist/assets/images/bg1.jpg",
                 "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus beatae voluptas unde doloribus inventore. Nulla minus dolorem necessitatibus fuga blanditiis accusantium aut nesciunt ratione tempore, unde adipisci repudiandae corrupti aspernatur?"
             },
@@ -109,14 +130,12 @@ function createDom(foods) {
     foodCatDiv.classList.add("foodCategory");
     foodCatDiv.id = foods["type"] +'s';
     
-    let i = 0;
-    for (const [key] of Object.entries(foods["foods"])) {
-        //console.log(`---------------------------------------------\n\n${foods["foods"][key]["Name"]}\n\n-----------------------------------------------\n\n`);
-        let food = new Food(foods["type"], foods["foods"][key]["Name"], foods["foods"][key]["Price"], foods["foods"][key]["imgSrc"], foods["foods"][key]["description"]);
-        foodCatDiv.append(food);
-    }
-    //console.log(foodDiv);
-    console.log(foodCatDiv);
+    let foodTypeHeader = document.createElement("h1");
+    foodTypeHeader.textContent = foods["type"] +'s';
+    foodCatDiv.append(foodTypeHeader);
+
+    for (const [key] of Object.entries(foods["foods"])) 
+        foodCatDiv.append(new Food(foods["type"], foods["foods"][key]["Name"], foods["foods"][key]["Price"], foods["foods"][key]["imgSrc"], foods["foods"][key]["description"]));
     return foodCatDiv;
 }
 export { renderMenu };
