@@ -1,7 +1,7 @@
 
 
 #menu {
-    background-color: #202020;
+    background-color: var(--bgColorThree);
     color: var(--fontColorLight);
     display: grid;
     grid-template-rows: repeat(auto-fill, minmax(400px, 1fr));

@@ -1,4 +1,4 @@
-import './home.css';
+import './css/home.css';
 
 const renderHome = (() => {
     const home = document.createElement("div");

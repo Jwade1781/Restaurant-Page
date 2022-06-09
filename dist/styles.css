@@ -7,7 +7,7 @@
 :root {
     --bgColorOne: rgba(0,0,0,0.9);
     --bgColorTwo: rgba(0,0,0,0.8);
-    --bgColorThree: #b39d59;
+    --bgColorThree: #202020;
 
     --bgColorAccent: #597ab3;
 
@@ -85,6 +85,7 @@ body {
         background-color:var(--fontColorDark);
     }
 }
+
 @keyframes bounceAnimation {
     100% {margin-top: var(--paddingSm);}
 }

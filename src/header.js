@@ -1,4 +1,4 @@
-import './header.css'
+import './css/header.css'
 
 import { backgroundShifter } from "./background.js"
 import { renderHome } from "./home.js"
