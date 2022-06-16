@@ -1,5 +1,5 @@
 import './css/header.css'
-
+import './css/animations.css'
 import { renderHome } from "./home.js"
 import { renderMenu } from "./menu.js"
 import { renderAbout } from "./about.js"
@@ -23,10 +23,10 @@ const renderHeader = (() => {
             "onclick": renderMenu
         },
 
-        "About": {
+        /*"About": {
             "classes": ["hoverBounce"],
             "onclick": renderAbout
-        },
+        },*/
 
         "Contact": {
             "classes": ["hoverBounce"],

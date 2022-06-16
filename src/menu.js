@@ -2,7 +2,6 @@ import './css/menu.css'
 import { Food } from './food';
 
 const renderMenu = (() => {
-    console.log("Rendering Menu");
     let menuDiv = document.createElement("div");
     menuDiv.id = "menu";
     menuDiv.append(createAppetizers());

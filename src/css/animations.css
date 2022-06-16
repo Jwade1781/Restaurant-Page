@@ -1,0 +1,46 @@
+.fadeIn {
+    animation: fadeInAnimation 2s linear forwards;
+}
+
+.fadeOut {
+    animation: fadeOutAnimation 2s linear forwards;
+}
+
+
+@keyframes fadeBlackAnimation {
+    100% {
+        color: var(--fontColorLight);
+        background-color: var(--fontColorDark);
+    }
+}
+
+@keyframes bounceAnimation {
+    100% {
+        margin-top: var(--paddingSm);
+    }
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        filter: blur(2px);
+        opacity: 0;
+    }
+
+    100% {
+        filter: blur(0px);
+        opacity: 1.0;
+    }
+}
+
+@keyframes fadeOutAnimation {
+    0% {
+        filter: blur(0px);
+        opacity: 1.0;
+    }
+
+    100% {
+        filter: blur(2px);
+        opacity: 0;
+        ;
+    }
+}

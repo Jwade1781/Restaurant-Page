@@ -12,11 +12,11 @@ nav {
     box-shadow: var(--shadowCurveSm);
 }
 
-nav > h1 {
+nav>h1 {
     font-size: var(--fontLg);
 }
 
-nav > ul {
+nav>ul {
     justify-content: center;
     display: flex;
     flex-direction: row;
@@ -24,11 +24,11 @@ nav > ul {
     list-style: none;
 }
 
-nav > ul > li {
+nav>ul>li {
     margin-top: var(--paddingMed);
     margin-bottom: var(--paddingMed);
     font-size: var(--fontMed);
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .navSelected {
